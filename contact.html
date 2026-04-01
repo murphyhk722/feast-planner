@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — Feast Planner</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/contact.css">
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="index.html" class="nav-logo">
+      <div class="logo-icon">🍽</div>
+      <span class="logo-text">Feast<span>Planner</span></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="how-it-works.html">How It Works</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="contact.html" class="nav-cta">Get Early Access</a></li>
+    </ul>
+    <div class="hamburger">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- CONTACT HERO -->
+  <div class="contact-hero">
+    <div class="contact-hero-text">
+      <span class="section-label">Get In Touch</span>
+      <h1>Let's talk about your next event</h1>
+      <p>Whether you want early access, have a question about Feast Planner, or just want to say hi — I'm easy to reach and I respond to every message.</p>
+    </div>
+  </div>
+
+  <!-- CONTACT SECTION -->
+  <section class="contact-section">
+    <div class="contact-grid">
+
+      <!-- Left Column -->
+      <div>
+        <div class="contact-perk-cards">
+          <div class="perk-card">
+            <div class="perk-icon">🎉</div>
+            <div>
+              <strong>Join the Waitlist</strong>
+              <p>Sign up to get early access before public launch — including 3 months of Pro free for founding members.</p>
+            </div>
+          </div>
+          <div class="perk-card">
+            <div class="perk-icon">💬</div>
+            <div>
+              <strong>Share Feedback</strong>
+              <p>Have a feature idea or pain point? I genuinely want to hear it. User feedback directly shapes what we build next.</p>
+            </div>
+          </div>
+          <div class="perk-card">
+            <div class="perk-icon">🤝</div>
+            <div>
+              <strong>Partner With Us</strong>
+              <p>Catering company, event venue, or planning association? Let's talk about how we can work together.</p>
+            </div>
+          </div>
+        </div>
+
+        <div style="border-radius:16px;overflow:hidden;height:220px;margin-bottom:1.25rem">
+          <img src="images/founder-3.jpg" alt="Hanna Murphy" style="width:100%;height:100%;object-fit:cover">
+        </div>
+
+        <div class="contact-details">
+          <h3>Direct Contact</h3>
+          <div class="contact-detail-item">
+            <div class="cd-icon">📧</div>
+            <div>
+              <div class="cd-label">Email</div>
+              <a href="mailto:murphyhk7.22@gmail.com">murphyhk7.22@gmail.com</a>
+            </div>
+          </div>
+          <div class="contact-detail-item">
+            <div class="cd-icon">⏱</div>
+            <div>
+              <div class="cd-label">Response Time</div>
+              <span>Within 24 hours, usually much faster</span>
+            </div>
+          </div>
+          <div class="contact-detail-item">
+            <div class="cd-icon">📍</div>
+            <div>
+              <div class="cd-label">Based In</div>
+              <span>State College, PA</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Form -->
+      <div class="contact-form-wrap">
+        <div id="contactFormState">
+          <h2>Send a message</h2>
+          <p class="form-subtitle">Fill out the form below and I'll get back to you within 24 hours.</p>
+          <form class="contact-form" id="contactForm" onsubmit="handleContactSubmit(event)">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="firstName">First Name</label>
+                <input type="text" id="firstName" name="firstName" placeholder="Jane" required>
+              </div>
+              <div class="form-group">
+                <label for="lastName">Last Name</label>
+                <input type="text" id="lastName" name="lastName" placeholder="Smith" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="contactEmail">Email Address</label>
+              <input type="email" id="contactEmail" name="email" placeholder="jane@yourcompany.com" required>
+            </div>
+            <div class="form-group">
+              <label for="reason">What brings you here?</label>
+              <select id="reason" name="reason">
+                <option value="">Select one</option>
+                <option>I want early access to Feast Planner</option>
+                <option>I have a feature request or feedback</option>
+                <option>I'm interested in a partnership</option>
+                <option>I have a question about pricing</option>
+                <option>Something else</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Your Message</label>
+              <textarea id="message" name="message" rows="5" placeholder="Tell me about your event planning situation, what you're struggling with, or what you're looking for..."></textarea>
+            </div>
+            <div class="form-check">
+              <input type="checkbox" id="earlyAccess" name="earlyAccess" checked>
+              <label for="earlyAccess">Add me to the early access waitlist — I'd love 3 months of Pro free at launch.</label>
+            </div>
+            <button type="submit" class="btn btn-primary submit-btn">Send Message →</button>
+            <p class="form-privacy">🔒 Your info stays private. No spam, ever.</p>
+          </form>
+        </div>
+
+        <div id="contactSuccess" style="display:none" class="contact-success">
+          <div class="success-animation">✅</div>
+          <h2>Message received!</h2>
+          <p>Thanks for reaching out. I'll be back in your inbox within 24 hours — usually much sooner.</p>
+          <div class="success-perks">
+            <div class="success-perk">✦ You're on the early access list</div>
+            <div class="success-perk">✦ 3 months Pro free when we launch</div>
+            <div class="success-perk">✦ We'll keep you updated on our progress</div>
+          </div>
+          <div class="success-next">
+            <p style="color:var(--muted);font-size:0.9rem;margin-bottom:1.25rem">While you wait, explore what we're building:</p>
+            <a href="how-it-works.html" class="btn btn-outline">See How It Works →</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq-section">
+    <div class="faq-inner">
+      <span class="section-label">FAQ</span>
+      <h2 class="section-title scroll-reveal">Common questions</h2>
+      <div class="faq-grid stagger-children">
+        <div class="faq-item">
+          <h4>When does Feast Planner launch?</h4>
+          <p>We're targeting a beta launch in early 2026. Waitlist members get access first — and the first 100 get 3 months of Pro completely free.</p>
+        </div>
+        <div class="faq-item">
+          <h4>Is there a free version?</h4>
+          <p>Yes. Our Starter plan will always be free for up to 3 events per month. No credit card required to sign up.</p>
+        </div>
+        <div class="faq-item">
+          <h4>How accurate is the AI scaling?</h4>
+          <p>Very. Our scaling algorithm accounts for service style (buffet vs. plated), portion standards by food category, and waste factors. Most users find it more accurate than manual estimates.</p>
+        </div>
+        <div class="faq-item">
+          <h4>Can I use my own recipes?</h4>
+          <p>Absolutely. You can import recipes, build from scratch, or use our library. All scaling works the same regardless of the source.</p>
+        </div>
+        <div class="faq-item">
+          <h4>Does it work for dietary restrictions?</h4>
+          <p>Yes — gluten-free, vegan, vegetarian, nut-free, and more. The AI flags allergens automatically and can suggest substitutions.</p>
+        </div>
+        <div class="faq-item">
+          <h4>Can I share plans with my team?</h4>
+          <p>Pro and Studio plans support team collaboration. Share event plans, assign prep tasks, and export documents for vendors and staff.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo-text">Feast<span>Planner</span></div>
+        <p>AI-powered meal planning for events of every size. Built for caterers, planners, and anyone who feeds a crowd.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Product</h4>
+        <ul>
+          <li><a href="how-it-works.html">How It Works</a></li>
+          <li><a href="index.html#pricing">Pricing</a></li>
+          <li><a href="contact.html">Get Early Access</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="mailto:murphyhk7.22@gmail.com">murphyhk7.22@gmail.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 FeastPlanner. All rights reserved.</span>
+      <span>Made with ♥ for the people who feed the crowd</span>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    function handleContactSubmit(e) {
+      e.preventDefault();
+      document.getElementById('contactFormState').style.display = 'none';
+      const success = document.getElementById('contactSuccess');
+      success.style.display = 'flex';
+    }
+  </script>
+</body>
+</html>
