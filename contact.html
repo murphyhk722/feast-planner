@@ -228,13 +228,28 @@
     </div>
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="js/main.js"></script>
   <script>
-    function handleContactSubmit(e) {
+    const { createClient } = supabase;
+    const sb = createClient(
+      'https://mpguppayraavinfbwdgk.supabase.co',
+      'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1wZ3VwcGF5cmFhdmluZmJ3ZGdrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU4Mjc4NDMsImV4cCI6MjA5MTQwMzg0M30.cb0HF67Qz94Kn-N2tlm3tRf1BwRB_bXFt8mP5q-k7CI'
+    );
+
+    async function handleContactSubmit(e) {
       e.preventDefault();
+      const first_name = document.getElementById('firstName').value;
+      const last_name = document.getElementById('lastName').value;
+      const email = document.getElementById('contactEmail').value;
+      const reason = document.getElementById('reason').value;
+      const message = document.getElementById('message').value;
+      const early_access = document.getElementById('earlyAccess').checked;
+
+      await sb.from('contact_submissions').insert({ first_name, last_name, email, reason, message, early_access });
+
       document.getElementById('contactFormState').style.display = 'none';
-      const success = document.getElementById('contactSuccess');
-      success.style.display = 'flex';
+      document.getElementById('contactSuccess').style.display = 'flex';
     }
   </script>
 </body>
